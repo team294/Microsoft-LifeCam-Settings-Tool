@@ -18,3 +18,6 @@ P:\Users\marcelebrate\Documents\3_Projects\BWCO_BelleAndWissell\NirvanaConfessio
 \\psf\Home\Documents\3_Projects\BWCO_BelleAndWissell\NirvanaConfessional\CameraPrefs\obj\x86\Release\ResolveAssemblyReference.cache
 \\psf\Home\Documents\3_Projects\BWCO_BelleAndWissell\NirvanaConfessional\CameraPrefs\obj\x86\Release\CameraPrefs.exe.manifest
 \\psf\Home\Documents\3_Projects\BWCO_BelleAndWissell\NirvanaConfessional\CameraPrefs\obj\x86\Release\CameraPrefs.application
+C:\Users\team\Documents\GitHub\Microsoft-LifeCam-Settings-Tool\obj\x86\Release\CameraPrefs.csprojResolveAssemblyReference.cache
+C:\Users\team\Documents\GitHub\Microsoft-LifeCam-Settings-Tool\obj\x86\Release\CameraPrefs.exe
+C:\Users\team\Documents\GitHub\Microsoft-LifeCam-Settings-Tool\obj\x86\Release\CameraPrefs.pdb

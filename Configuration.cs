@@ -42,14 +42,20 @@ namespace CameraPrefsApp
 	}
 
 
-	[Serializable]
-	[XmlRoot("camera")]
-	public class CameraPrefs
-	{
-		[XmlAttribute("name")]
-		public String Name;
+    [Serializable]
+    [XmlRoot("camera")]
+    public class CameraPrefs
+    {
+        [XmlAttribute("name")]
+        public String Name;
 
-		[XmlAttribute("autoExposure")]
+        [XmlAttribute("nameContains")]
+        public String NameContains;
+
+        [XmlAttribute("cameraNumber")]
+        public int CameraNumber;
+
+        [XmlAttribute("autoExposure")]
 		public Boolean AutoExposure;
 
 		[XmlAttribute("autoFocus")]
@@ -78,8 +84,8 @@ namespace CameraPrefsApp
 		[XmlAttribute("contrast")]
 		public int Contrast;
 
-		//[XmlAttribute("exposure")]
-		//public int Exposure;
+		[XmlAttribute("exposure")]
+		public int Exposure;
 
 		[XmlAttribute("saturation")]
 		public int Saturation;

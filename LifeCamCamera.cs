@@ -13,24 +13,37 @@ namespace CameraPrefsApp
 	class LifeCamCamera
 	{
 		public VideoCaptureDevice Source;
+        public int cameraNumberFound;
 
 		private IAMCameraControl cameraControls;
 		private IAMVideoProcAmp videoProcAmp;
 
 		private String _name;
 
-		public LifeCamCamera(string name)
+		public LifeCamCamera(string name, string nameContains, int cameraNumber)
 		{
-			_name = name;
+			_name = "";
 			String moniker = null;
 			FilterInfoCollection videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
 
-			// Match specified camera name to device
-			for (int i = 0, n = videoDevices.Count; i < n; i++)
+            Console.WriteLine("");
+            if (!string.IsNullOrEmpty(name)) Console.WriteLine("Searching for camera name  = '" + name + "'");
+
+            if (!string.IsNullOrEmpty(nameContains)) Console.WriteLine("Searching for camera name contains = '" + nameContains + "'");
+
+            if (cameraNumber>0) Console.WriteLine("Searching for camera number = " + cameraNumber);
+
+            // Match specified camera name to device
+            for (int i = 0, n = videoDevices.Count; i < n; i++)
 			{
-				if (name == videoDevices[i].Name)
+                Console.WriteLine("Camera " + (i+1) + ": '" + videoDevices[i].Name + "'");
+                if ( (name == videoDevices[i].Name) || 
+                     (!string.IsNullOrEmpty(nameContains) && videoDevices[i].Name.IndexOf(nameContains) >= 0) ||
+                     (cameraNumber == i+1) )
 				{
 					moniker = videoDevices[i].MonikerString;
+                    _name = videoDevices[i].Name;
+                    cameraNumberFound = i+1;
 					break;
 				}
 			}
@@ -48,14 +61,14 @@ namespace CameraPrefsApp
 
 		static public LifeCamCamera CreateFromPrefs(CameraPrefs prefs)
 		{
-			LifeCamCamera newCamera = new LifeCamCamera(prefs.Name);
+			LifeCamCamera newCamera = new LifeCamCamera(prefs.Name, prefs.NameContains, prefs.CameraNumber);
 
 			if (newCamera.Source == null)
-				throw new Exception("Camera \"" + prefs.Name + "\" not found. Skipping.");
+				throw new Exception("\nCamera not found. Skipping.");
 
 			FieldInfo[] fields = prefs.GetType().GetFields();
 
-			Console.WriteLine("\nApplying \"" + prefs.Name + "\" settings...\n");
+			Console.WriteLine("\nApplying settings to camera " + newCamera.cameraNumberFound + "...");
 
 			foreach (FieldInfo field in fields)
 			{
