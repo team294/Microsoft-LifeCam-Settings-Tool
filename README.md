@@ -30,3 +30,32 @@ A couple notes:
 - Note I am not a .NET developer, so it may be a bit rough around the edges, but feel free to do with this source what you will.
 
 For more details on this issue, including others' workarounds for some of the above limitations, please visit this Microsoft Community page: https://answers.microsoft.com/en-us/windows/forum/windows_7-hardware/is-it-possible-to-save-auto-focus-auto-color/e6b812e3-5e52-e011-8dfc-68b599b31bf5
+
+
+Modifications by Don Sawdai, 3/18/2017:
+
+1.
+You can select the camera by any of these 3 tags:
+	name="myCameraName" : Select camera with name = "myCameraName"
+	nameContains="amera" : Select camera with name that contains the substring "amera"
+	cameraNumber="1" : Select camera number 1 (first camera on list).  Counting starts at 1.
+
+2.
+Available tags to set are
+	autoFocus="false"
+	autoWhiteBalance="false"
+	autoExposure="false"
+			
+	focus="2"
+	zoom="0"
+	pan="0"
+	tilt="0"
+			
+	brightness="128"
+	whiteBalance="4500"
+	saturation="200"
+	exposure="0"
+	contrast="5"
+
+Current source code is on team 294's github site.
+

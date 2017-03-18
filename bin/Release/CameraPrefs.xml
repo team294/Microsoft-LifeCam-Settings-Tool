@@ -6,18 +6,41 @@
 	<cameras>
 	
 		<camera
-			name="Microsoft LifeCam Cinema"
+			name="Microsoft LifeCam HD-3000"
+			nameContains="LifeCam"
+			cameraNumber="1"
 			autoFocus="false"
 			autoWhiteBalance="false"
+			autoExposure="false"
 			
 			focus="2"
 			zoom="0"
 			pan="0"
 			tilt="0"
 			
-			brightness="100"
-			whiteBalance="5300"
-			saturation="0"
+			brightness="30"
+			whiteBalance="4500"
+			saturation="200"
+			exposure="-11"
+			contrast="5"
+			/>
+
+		<camera
+			cameraNumber="2"
+			autoFocus="false"
+			autoWhiteBalance="false"
+			autoExposure="false"
+			
+			focus="2"
+			zoom="0"
+			pan="0"
+			tilt="0"
+			
+			brightness="30"
+			whiteBalance="4500"
+			saturation="200"
+			exposure="-11"
+			contrast="5"
 			/>
 
 	</cameras>
